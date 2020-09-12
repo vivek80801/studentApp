@@ -3,7 +3,7 @@ import React from 'react';
 const Home: React.FC = ():JSX.Element => {
     return (
         <>
-        welcome to student app
+        <h1>Welcome to Student App</h1>
         </>
     )
 }
