@@ -100,6 +100,7 @@ const Students: React.FC = (): JSX.Element => {
           Name:
         </label>
         <input
+          id="name"
           type="text"
           placeholder="Enter Name"
           required
@@ -107,8 +108,9 @@ const Students: React.FC = (): JSX.Element => {
           className="form-control"
           onChange={(e) => setName(e.target.value)}
         />
-        <label htmlFor="name">Roll No:</label>
+        <label htmlFor="roll-no">Roll No:</label>
         <input
+          id="roll-no"
           type="number"
           placeholder="Enter Roll number"
           min={1}
@@ -117,8 +119,9 @@ const Students: React.FC = (): JSX.Element => {
           className="form-control"
           onChange={(e) => setRollNo(+e.target.value)}
         />
-        <label htmlFor="name">Class:</label>
+        <label htmlFor="class">Class:</label>
         <input
+          id="class"
           type="number"
           placeholder="Enter Class"
           min={1}
@@ -147,8 +150,9 @@ const Students: React.FC = (): JSX.Element => {
             }
           }}
         />
-        <label htmlFor="name">Section:</label>
+        <label htmlFor="section">Section:</label>
         <input
+          id="section"
           type="text"
           placeholder="Enter Section"
           required
@@ -243,20 +247,23 @@ const Students: React.FC = (): JSX.Element => {
               ))}
             </>
           ) : null}
-          <label htmlFor="name">Name:</label>
+          <label htmlFor="edit-name">Name:</label>
           <input
+            id="edit-name"
             type="text"
             className="form-control"
             onChange={(e) => setEditName(e.target.value)}
           />
-          <label htmlFor="roll-number">Roll No:</label>
+          <label htmlFor="edit-roll-no">Roll No:</label>
           <input
+            id="roll-no"
             type="number"
             className="form-control"
             onChange={(e) => setEditRollNo(+e.target.value)}
           />
-          <label htmlFor="class">Class:</label>
+          <label htmlFor="edit-class">Class:</label>
           <input
+            id="edit-class"
             type="number"
             className="form-control"
             onChange={(e) => {
@@ -283,6 +290,7 @@ const Students: React.FC = (): JSX.Element => {
           />
           <label htmlFor="section">Section:</label>
           <input
+            id="edit-section"
             type="text"
             className="form-control"
             onChange={(e) => {
