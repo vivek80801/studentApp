@@ -303,7 +303,7 @@ const Students: React.FC = (): JSX.Element => {
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
-            Cencel
+            Cancel
           </Button>
           <Button
             variant="primary"
