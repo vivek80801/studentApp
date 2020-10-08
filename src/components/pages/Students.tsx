@@ -100,6 +100,7 @@ const Students: React.FC = (): JSX.Element => {
           Name:
         </label>
         <input
+          id="name"
           type="text"
           placeholder="Enter Name"
           required
@@ -107,8 +108,9 @@ const Students: React.FC = (): JSX.Element => {
           className="form-control"
           onChange={(e) => setName(e.target.value)}
         />
-        <label htmlFor="name">Roll No:</label>
+        <label htmlFor="roll-no">Roll No:</label>
         <input
+          id="roll-no"
           type="number"
           placeholder="Enter Roll number"
           min={1}
@@ -117,8 +119,9 @@ const Students: React.FC = (): JSX.Element => {
           className="form-control"
           onChange={(e) => setRollNo(+e.target.value)}
         />
-        <label htmlFor="name">Class:</label>
+        <label htmlFor="class">Class:</label>
         <input
+          id="class"
           type="number"
           placeholder="Enter Class"
           min={1}
@@ -126,44 +129,26 @@ const Students: React.FC = (): JSX.Element => {
           aria-required
           className="form-control"
           onChange={(e) => {
-            let num = parseInt(e.target.value);
-            if (
-              num === 1 ||
-              num === 2 ||
-              num === 3 ||
-              num === 4 ||
-              num === 5 ||
-              num === 6 ||
-              num === 7 ||
-              num === 8 ||
-              num === 9 ||
-              num === 10 ||
-              num === 11 ||
-              num === 12
-            ) {
+            let num = parseInt(e.target.value) as Class;
+            if (num>0 && num<13) {
               setCls(num);
             } else {
               setCls(null);
             }
           }}
         />
-        <label htmlFor="name">Section:</label>
+        <label htmlFor="section">Section:</label>
         <input
+          id="section"
           type="text"
           placeholder="Enter Section"
           required
           aria-required
           className="form-control"
           onChange={(e) => {
-            if (
-              e.target.value === "A" ||
-              e.target.value === "B" ||
-              e.target.value === "C" ||
-              e.target.value === "D" ||
-              e.target.value === "E" ||
-              e.target.value === "F"
-            ) {
-              setSection(e.target.value);
+            let section = e.target.value as Section;
+            if (section>='A' && section<='F') {
+              setSection(section);
             } else {
               setSection(null);
             }
@@ -243,39 +228,30 @@ const Students: React.FC = (): JSX.Element => {
               ))}
             </>
           ) : null}
-          <label htmlFor="name">Name:</label>
+          <label htmlFor="edit-name">Name:</label>
           <input
+            id="edit-name"
             type="text"
             className="form-control"
             onChange={(e) => setEditName(e.target.value)}
           />
-          <label htmlFor="roll-number">Roll No:</label>
+          <label htmlFor="edit-roll-no">Roll No:</label>
           <input
+            id="roll-no"
             type="number"
             className="form-control"
             onChange={(e) => setEditRollNo(+e.target.value)}
           />
-          <label htmlFor="class">Class:</label>
+          <label htmlFor="edit-class">Class:</label>
           <input
+            id="edit-class"
             type="number"
             className="form-control"
             onChange={(e) => {
-              let num = parseInt(e.target.value);
-              if (
-                num === 1 ||
-                num === 2 ||
-                num === 3 ||
-                num === 4 ||
-                num === 5 ||
-                num === 6 ||
-                num === 7 ||
-                num === 8 ||
-                num === 9 ||
-                num === 10 ||
-                num === 11 ||
-                num === 12
-              ) {
-                setEditClass(num);
+              let classNum = parseInt(e.target.value) as Class;
+
+              if (classNum>0 && classNum<13) {
+                setEditClass(classNum);
               } else {
                 setEditClass(null);
               }
@@ -283,18 +259,13 @@ const Students: React.FC = (): JSX.Element => {
           />
           <label htmlFor="section">Section:</label>
           <input
+            id="edit-section"
             type="text"
             className="form-control"
             onChange={(e) => {
-              if (
-                e.target.value === "A" ||
-                e.target.value === "B" ||
-                e.target.value === "C" ||
-                e.target.value === "D" ||
-                e.target.value === "E" ||
-                e.target.value === "F"
-              ) {
-                setEditSection(e.target.value);
+              let section = e.target.value as Section;
+              if (section>='A' && section<='F') {
+                setEditSection(section);
               } else {
                 setEditSection(null);
               }
@@ -303,7 +274,7 @@ const Students: React.FC = (): JSX.Element => {
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
-            Cencel
+            Cancel
           </Button>
           <Button
             variant="primary"
