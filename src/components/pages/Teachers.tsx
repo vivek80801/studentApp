@@ -14,9 +14,6 @@ const Teachers: React.FC = (): JSX.Element => {
   let cls: Class = 1;
   let sec: Section = "A";
 
-  React.useEffect(() => {
-    setClasses([...classes, { Class: cls, Section: sec }]);
-  }, [classes, cls, sec]);
   return (
     <>
       <form
@@ -29,7 +26,12 @@ const Teachers: React.FC = (): JSX.Element => {
               { err: true, msg: "Please fill name of teacher" },
             ]);
           } else {
-            setName(name);
+            setClasses([...classes, { Class: cls, Section: sec }]);
+            return teachers.dispatch({
+              type: "ADD_TEACHER",
+              Class: classes,
+              Name: name,
+            });
           }
         }}
       >
@@ -111,28 +113,28 @@ const Teachers: React.FC = (): JSX.Element => {
           Add Teachers
         </Button>
         <table className="table">
-          <tr>
-            <td>Name</td>
-            <td>Classes</td>
-            <td>Sections</td>
-          </tr>
-          <tr>
+          <tbody>
+            <tr>
+              <td>Name</td>
+              <td>Classes</td>
+              <td>Sections</td>
+            </tr>
             {teachers.teacher.map((teach, idx) => (
-              <>
+              <tr key={teach.id}>
                 <td key={idx}>{teach.Name}</td>
                 <td>
-                  {teach.Class.map((te) => (
-                    <span> {te.Class}</span>
+                  {teach.Class.map((te, i) => (
+                    <span key={i}> {te.Class}</span>
                   ))}
                 </td>
                 <td>
-                  {teach.Class.map((te) => (
-                    <span> {te.Section}</span>
+                  {teach.Class.map((te, j) => (
+                    <span key={j}> {te.Section}</span>
                   ))}
                 </td>
-              </>
+              </tr>
             ))}
-          </tr>
+          </tbody>
         </table>
       </form>
     </>
