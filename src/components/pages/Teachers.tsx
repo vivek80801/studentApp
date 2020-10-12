@@ -110,7 +110,7 @@ const Teachers: React.FC = (): JSX.Element => {
         ))}
         <br />
         <Button type="submit" variant="success">
-          Add Teachers
+          Add Teacher
         </Button>
         <table className="table">
           <tbody>
