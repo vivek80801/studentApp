@@ -88,7 +88,7 @@ const Teachers: React.FC = (): JSX.Element => {
                 ])
               }
             >
-              Add
+              Add +
             </Button>
             {classNumber.id > 1 ? (
               <Button
@@ -112,30 +112,48 @@ const Teachers: React.FC = (): JSX.Element => {
         <Button type="submit" variant="success">
           Add Teacher
         </Button>
-        <table className="table">
-          <tbody>
-            <tr>
-              <td>Name</td>
-              <td>Classes</td>
-              <td>Sections</td>
-            </tr>
-            {teachers.teacher.map((teach, idx) => (
-              <tr key={teach.id}>
-                <td key={idx}>{teach.Name}</td>
-                <td>
-                  {teach.Class.map((te, i) => (
-                    <span key={i}> {te.Class}</span>
-                  ))}
-                </td>
-                <td>
-                  {teach.Class.map((te, j) => (
-                    <span key={j}> {te.Section}</span>
-                  ))}
-                </td>
+        {teachers.teacher.length > 0 ? (
+          <table className="table">
+            <tbody>
+              <tr>
+                <td>Name</td>
+                <td>Classes</td>
+                <td>Sections</td>
+                <td>Delete</td>
               </tr>
-            ))}
-          </tbody>
-        </table>
+              {teachers.teacher.map((teach, idx) => (
+                <tr key={teach.id}>
+                  <td key={idx}>{teach.Name}</td>
+                  <td>
+                    {teach.Class.map((te, i) => (
+                      <span key={i}> {te.Class}</span>
+                    ))}
+                  </td>
+                  <td>
+                    {teach.Class.map((te, j) => (
+                      <span key={j}> {te.Section}</span>
+                    ))}
+                  </td>
+                  <td>
+                    <Button
+                      variant="danger"
+                      onClick={() =>
+                        teachers.dispatch({
+                          type: "REMOVE_TEACHER",
+                          id: teach.id,
+                        })
+                      }
+                    >
+                      &times;
+                    </Button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        ) : (
+          <h3>No teacher</h3>
+        )}
       </form>
     </>
   );

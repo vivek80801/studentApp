@@ -154,7 +154,7 @@ const Students: React.FC = (): JSX.Element => {
             }
           }}
         />
-        <Button type="submit">Add</Button>
+        <Button type="submit">Add +</Button>
       </form>
       <br />
       {showTable ? (
@@ -181,7 +181,7 @@ const Students: React.FC = (): JSX.Element => {
                       setEditId(stu.id);
                     }}
                   >
-                    Edit
+                    Edit <span role="img" aria-label="emoji" > ✍ </span>
                   </Button>
                 </td>
                 <td>

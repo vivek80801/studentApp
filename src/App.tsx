@@ -7,7 +7,7 @@ import Default from "./components/pages/Default";
 import Students from "./components/pages/Students";
 import Teachers from "./components/pages/Teachers";
 
-function App() {
+const App: React.FC =(): JSX.Element=> {
   return (
     <Router>
       <div className="container">
