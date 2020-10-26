@@ -7,20 +7,20 @@ import Default from "./components/pages/Default";
 import Students from "./components/pages/Students";
 import Teachers from "./components/pages/Teachers";
 
-const App: React.FC =(): JSX.Element=> {
-  return (
-    <Router>
-      <div className="container">
-        <MyNavbar />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/students" component={Students} />
-          <Route exact path="/teachers" component={Teachers} />
-          <Route exact component={Default} />
-        </Switch>
-      </div>
-    </Router>
-  );
-}
+const App: React.FC = (): JSX.Element => {
+	return (
+		<Router>
+			<div className="container">
+				<MyNavbar />
+				<Switch>
+					<Route exact path="/" component={Home} />
+					<Route exact path="/students" component={Students} />
+					<Route exact path="/teachers" component={Teachers} />
+					<Route exact component={Default} />
+				</Switch>
+			</div>
+		</Router>
+	);
+};
 
 export default App;

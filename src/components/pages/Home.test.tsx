@@ -5,13 +5,13 @@ import { TeacherProvider } from "../../context/TeacherContext";
 import Home from "./Home";
 
 it("should be render", () => {
-  const { getByText } = render(
-    <StudentsProvider>
-      <TeacherProvider>
-        <Home />
-      </TeacherProvider>
-    </StudentsProvider>
-  );
-  const textElement = getByText("Welcome to Student App");
-  expect(textElement).toBeInTheDocument();
+	const { getByText } = render(
+		<StudentsProvider>
+			<TeacherProvider>
+				<Home />
+			</TeacherProvider>
+		</StudentsProvider>
+	);
+	const textElement = getByText("Welcome to Student App");
+	expect(textElement).toBeInTheDocument();
 });

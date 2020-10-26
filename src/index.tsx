@@ -7,14 +7,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
-  <React.StrictMode>
-      <StudentsProvider>
-        <TeacherProvider>
-        <App />
-        </TeacherProvider>
-      </StudentsProvider>
-  </React.StrictMode>,
-  document.getElementById("root")
+	<React.StrictMode>
+		<StudentsProvider>
+			<TeacherProvider>
+				<App />
+			</TeacherProvider>
+		</StudentsProvider>
+	</React.StrictMode>,
+	document.getElementById("root")
 );
 
 serviceWorker.register();

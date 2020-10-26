@@ -1,17 +1,16 @@
 name: "Test the Student App"
 
 on:
-  pull_request:
-    branches: [master]
-
+ pull_request:
+  branches: [master]
 
 jobs:
-  test_pull_request:
-    runs_on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/node@v1
-        with:
-          node_version: 12
-      - run: npm ci
-      - run: npm run test
+ test_pull_request:
+  runs_on: ubuntu-latest
+  steps:
+   - uses: actions/checkout@v2
+   - uses: actions/node@v1
+     with:
+      node_version: 12
+   - run: npm ci
+   - run: npm run test
