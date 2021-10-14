@@ -1,6 +1,12 @@
 # Student App 👩‍🎓👨‍🎓
 In this App You can `add a student`, `add a teacher`, `delete a student`, `update a student` and `you can see all the students`.
 
+### Home page
+![home-page](images/student-app-home.png)
+### Students page
+![home-page](images/student-app-student.png)
+### Teachers page
+![home-page](images/student-app-teachers.png)
 ## 🛠️ Installation Steps:
 
 1. Clone the repository
