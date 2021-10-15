@@ -3,7 +3,7 @@ Thank you for contributing to our repository
 
 ## Description 📜
 
-Please include a summary of the change and which issue is fixed. Please also include relevant motivation and context. <br>
+Please include a summary of the change and the issue is fixed.<br>
 Resolves #<issue_number_here>
 
 
